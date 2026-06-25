@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kok体育 · 信息索引站</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f7fa;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0f172a 0%, #1e2a3e 100%);
+      color: #e9edf2;
+      padding: 4rem 2rem 3.2rem;
+      text-align: center;
+      border-bottom: 3px solid #d9872b;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.6rem;
+    }
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #b0c0d0;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+    .hero .marker {
+      display: inline-block;
+      background: #d9872b;
+      color: #0f172a;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 1rem;
+      border-radius: 20px;
+      margin-top: 1.4rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* 正文区 — 浅色，目录感布局 */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.5rem 1.8rem 4rem;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #0f172a;
+      border-left: 4px solid #d9872b;
+      padding-left: 0.8rem;
+      margin: 2.2rem 0 1rem;
+    }
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 680px) {
+      .grid-2col { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero { padding: 3rem 1.2rem 2.2rem; }
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 1.5rem 1.6rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #1e293b;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .card p {
+      font-size: 0.94rem;
+      color: #334155;
+      margin-bottom: 0.3rem;
+    }
+    .card .badge {
+      font-size: 0.75rem;
+      background: #eef2f6;
+      color: #1e293b;
+      border-radius: 30px;
+      padding: 0.1rem 0.7rem;
+      display: inline-block;
+      margin-top: 0.4rem;
+    }
+
+    .note-box {
+      background: #f0f3f8;
+      border-left: 4px solid #d9872b;
+      padding: 1.2rem 1.6rem;
+      border-radius: 0 10px 10px 0;
+      margin: 1.8rem 0;
+      font-size: 0.95rem;
+    }
+    .note-box strong {
+      color: #0f172a;
+    }
+
+    .faq-mini {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+    .faq-mini li {
+      margin-bottom: 0.7rem;
+      font-size: 0.94rem;
+    }
+    .faq-mini li span {
+      font-weight: 500;
+      color: #d9872b;
+      margin-right: 0.5rem;
+    }
+
+    .rel-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.2rem;
+      padding: 0.5rem 0;
+      list-style: none;
+    }
+    .rel-list li {
+      font-size: 0.92rem;
+      color: #334155;
+    }
+    .rel-list li::before {
+      content: "·";
+      color: #d9872b;
+      font-weight: bold;
+      margin-right: 0.4rem;
+    }
+
+    a {
+      color: #c9771e;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border 0.15s;
+    }
+    a:hover {
+      border-bottom-color: #c9771e;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #dce2e9;
+      font-size: 0.85rem;
+      color: #64748b;
+      text-align: center;
+    }
+    .inline-link {
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>资料整理 · 信息索引</h1>
+  <p class="sub">围绕 kok体育 的内容归档与常见查询入口，方便快速检索和参考。</p>
+  <span class="marker">知识库 · 目录式</span>
+</header>
+
+<main class="container">
+
+  <!-- 说明区 -->
+  <div class="section-title">说明</div>
+  <p style="margin-bottom: 0.8rem;">
+    这里整理了与 <a href="https://cnwebs-koksport.com" class="inline-link">kok体育</a> 相关的几个常见信息维度和资源方向，方便需要快速了解或回顾的人使用。内容来源均基于公开知识整理，不构成任何形式的指引或推荐。
+  </p>
+  <p>
+    如果你对某个方向有更深入的查询需求，可自行依据下方索引进一步查找对应资料。本页仅作为资料结构展示，不做细节展开。
+  </p>
+
+  <!-- 特点 / 信息维度 -->
+  <div class="section-title">信息维度</div>
+  <div class="grid-2col">
+    <div class="card">
+      <h3>📋 基础信息</h3>
+      <p>涵盖与 kok体育 相关的基本概念、使用场景和一般性说明。适合初次接触时建立背景框架。</p>
+      <span class="badge">条目数 7</span>
+    </div>
+    <div class="card">
+      <h3>🗂️ 操作指引</h3>
+      <p>常规流程、功能模块与常见操作路径的简洁描述。便于快速定位常用环节。</p>
+      <span class="badge">流程类 6</span>
+    </div>
+    <div class="card">
+      <h3>📌 注意事项</h3>
+      <p>使用过程中容易忽略的细节或容易产生误解的地方，以条目方式列出提醒。</p>
+      <span class="badge">提醒项 5</span>
+    </div>
+    <div class="card">
+      <h3>🔗 关联参考</h3>
+      <p>与 kok体育 有内容关联的其他平台或资料库链接，方便交叉检索。</p>
+      <span class="badge">参考源 4</span>
+    </div>
+  </div>
+
+  <!-- 提示区 -->
+  <div class="section-title">提示</div>
+  <div class="note-box">
+    <strong>关于信息时效性</strong><br>
+    这里整理的内容基于公开资料，可能随时间产生变动。如需获取最新情况，建议直接通过 <a href="https://cnwebs-koksport.com">kok体育</a> 相关页面进行核实，避免依赖过时信息。
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="section-title">常见询问摘要</div>
+  <ul class="faq-mini">
+    <li><span>Q1</span> kok体育 的主要涵盖范围是什么？<br>— 主要涉及体育资讯、赛事动态及相关的资料汇总方向，具体细节可参考对应分类。</li>
+    <li><span>Q2</span> 如何快速查找特定内容？<br>— 建议利用站内搜索功能或按上述信息维度逐一筛选，也可直接访问 <a href="https://cnwebs-koksport.com">kok体育</a> 查看最新索引。</li>
+    <li><span>Q3</span> 是否有历史归档可供查阅？<br>— 部分往期资料可通过对应存档页面回溯，但整理覆盖范围有限。</li>
+  </ul>
+
+  <!-- 相关信息区 -->
+  <div class="section-title">相关信息</div>
+  <ul class="rel-list">
+    <li>体育资讯聚合 · 动态更新</li>
+    <li>赛事资料库 · 分类查阅</li>
+    <li>用户笔记 · 操作备忘</li>
+    <li>常见术语 · 简易注释</li>
+    <li>版本记录 · 内容迭代</li>
+  </ul>
+  <p style="font-size: 0.9rem; margin-top: 0.2rem; color: #475569;">
+    以上信息分类仅用于辅助索引，具体内容以各资源页面实际呈现为准。
+  </p>
+
+  <div class="footer-note">
+    本页为资料索引入口，内容仅供信息整理参考。<br>
+    如需获取完整内容，请直接查阅 <a href="https://cnwebs-koksport.com">kok体育</a> 相关页面。
+  </div>
+
+</main>
+
+</body>
+</html>
